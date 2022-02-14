@@ -1,0 +1,20 @@
+# libraries importing 
+! pip install webbot 
+from webbot import Browser 
+
+# navigate to target website 
+web = Browser()
+web.go_to('https://www.linkedin.com/home')
+
+# login 
+web.type('username , id= 'session_key')
+web.type('password' , id= 'session_password')
+web.click("Sign in")
+
+# search for kristel in chatbox
+web.type('kristel kar thung' , id= 'msg-overlay-list-bubble-search__search-typeahead-input')
+web.click('Kristel Kar Thung Tan')
+
+# input statement and send 
+web.type("hello go away", tag='div') 
+web.click('Send')
